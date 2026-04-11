@@ -1,69 +1,129 @@
 import time
 import math
-#import tkinter as tk
+#import tkinter as tk (will be added later)
+#add section for exiting program
 
-#section for basic math
+def exit():
+    prompt = input("Would you like to continue: ")
+    promptl = prompt.lower()
+    if  promptl == "yes":
+        mainMenu()
+    else:
+        print("Goodbye")
+        
 def addition():
     print("Addition mode")
-    variable_a = int(input("Enter the first value: "))
-    variable_b = int(input("Enter the second value: "))
-    result = float(variable_a + variable_b)
-    print(f"{variable_a} plus {variable_b} is {result}")
+    num = int(input("How many problems do you want to answer: "))
+    print()
+    count = 1
+    while (count <= num):
+        variable_a = float(input("Enter the first value: "))
+        variable_b = float(input("Enter the second value: "))
+        #variable_a = 1
+        #variable_b = 1
+        result = float(variable_a + variable_b)
+        print(f"{count}. {variable_a} plus {variable_b} is {result:.3}")
+        print()
+        count = count + 1
+    exit()
 
+#Finished
 def subtraction():
-    print("Subtraction mode")
-    variable_a = int(input("Enter the first value: "))
-    variable_b = int(input("Enter the second value: "))
-    result = float(variable_a - variable_b)
-    print(f"{variable_a} minus {variable_b} is {result}")
+    print("Subtraction Mode")
+    num = int(input("How many problems do you want to answer: "))
+    print()
+    count = 1
+    while (count <= num):
+        variable_a = float(input("Enter the first value: "))
+        variable_b = float(input("Enter the second value: "))
+        #variable_a = 1
+        #variable_b = 1
+        result = float(variable_a + variable_b)
+        print(f"{count}. {variable_a} plus {variable_b} is {result:.3}")
+        print()
+        count = count + 1
+    exit()
 
+
+#Finished
 def multiplication():
-    print("Multiplication mode")
-    variable_a = int(input("Enter the first value: "))
-    variable_b = int(input("Enter the second value: "))
-    result = float(variable_a * variable_b)
-    print(f"{variable_a} times {variable_b} is {result}")
-    
+    print("Subtraction Mode")
+    num = int(input("How many problems do you want to answer: "))
+    print()
+    count = 1
+    while (count <= num):
+        variable_a = float(input("Enter the first value: "))
+        variable_b = float(input("Enter the second value: "))
+        #variable_a = 1
+        #variable_b = 1
+        result = float(variable_a + variable_b)
+        print(f"{count}. {variable_a} plus {variable_b} is {result:.3}")
+        print()
+        count = count + 1
+    exit()
+
+ 
+#Finished
 def division():
     print("Division mode")
-    variable_a = int(input("Enter the first value: "))
-    variable_b = int(input("Enter the second value: "))
-    result = float(variable_a / variable_b)
-    print(f"{variable_a} divided {variable_b} is {result}")
+    num = int(input("How many problems do you want to answer: "))
+    print()
+    count = 1
+    while (count <= num):
+        variable_a = float(input("Enter the first value: "))
+        variable_b = float(input("Enter the second value: "))
+        #variable_a = 1
+        #variable_b = 1
+        result = float(variable_a + variable_b)
+        print(f"{count}. {variable_a} plus {variable_b} is {result:.3}")
+        print()
+        count = count + 1
+    exit()
+
     
 def squareroot():
+    count = 1
     print("Squareroot mode")
-    variable = int(input("Enter Value: "))
-    square_root = math.sqrt(variable)
-    print(square_root)
+    num = int(input("How many roots are you taking: "))
+    while count <= num:
+        variable = int(input("Enter Value: "))
+        square_root = math.sqrt(variable)
+        print(f"{count}. The root of {variable} is {square_root:.3f}")
+        print()
+        count = count + 1
+    exit()
 #section for basic math
 
 
 #area of a triangle start
-def area_of_triangle():
+def area_of_triangle(b,h):
     area = ((1/2) * b * h)
-    print(f"The area is {area}")
-
+    print(f"The area is {area:.3}")
+    exit()
+    
 def aot_details():
-    print("The formula to find the area of a triangle is (1/2)b*h.")
+    print("The formula to find the area of a triangle is (1/2) * base * height.")
     b = float(input("Enter base: "))
     h = float(input("Enter height: "))
     area_of_triangle(b,h)
+    exit()
 #area of a triangle end
     
 #area of a square start
 def area_of_square(b,h):
     area = b * h
-    print(f"The area of the square {area}")
+    print(f"The area of the square is {area:.3}")
+    exit()
     
 def square_details():
-    print("Formula is base * height")
-    b = int(input("Enter height "))
-    h = int(input("Height base "))
+    print("The formula to find the area of a square is base * height.")
+    b = float(input("Enter height "))
+    h = float(input("Height base "))
     area_of_square(b,h)
 #area of a square end
     
 def trig_mode():
+    print("Triginometry Mode")
     x = int(input("Enter number "))
     mode = input("Enter trig mode ")
     if mode == "cos":
@@ -107,60 +167,90 @@ def trig_mode():
         print("Invalid mode")
         trig_mode()
 
-def derivatives():
-    print("Not finieshed")
-
 def floor():
-    print("Not finieshed")
-
-def ceiling():
-    print("Not finieshed")
-
-def power():
-    print("Not finieshed")
-
-def log():
-    print("Not finieshed")
+    print("Floor Mode")
+    numVal = float(input("Enter Value"))
+    floorVal = math.floor(numVal)
+    print(floorVal)
     
+def ceiling():
+    print("Ceiling Mode")
+    numVal = float(input("Enter Value"))
+    ceilingVal = math.ceil(numVal)
+    print(ceilingVal)
+    
+def power():
+    powerInput = float(input("Enter number to raise by: "))
+    numInput = float(input("Enter number being raised: "))
+    result = math.pow(numInput, powerInput)
+    print(result)
+
+#Log calculation
+def log_calc(x,base):
+    results = math.log(x, base)
+    print(f"{results:.3f}")
+#Log input and push to calculate
+def log():
+    x = float(input("Enter value to take log of: "))
+    base = float(input("Enter base value: "))
+    log_calc(x,base)
+
+
+#countdown for main menu
+
+def mainMenu():
+    
+    print("\nWe offer")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Square Root")
+    print("6. Area of Triangle")
+    print("7. Area of Square")
+    print("8. Trigonometric Functions")
+    print("9. Floor")
+    print("10. Ceiling")
+    print("11. Power")
+    print("12. Logarithm")
+    mode = int(input("Please select a mode: "))
+
+    if mode == 1:
+        addition()
+    elif mode == 2:
+        subtraction()
+    elif mode == 3:
+        multiplication()
+    elif mode == 4:
+        division()
+    elif mode == 5:
+        squareroot()
+    elif mode == 6:
+        aot_details()
+    elif mode == 7:
+        square_details()
+    elif mode == 8:
+        trig_mode()
+    elif mode == 9:
+        floor()
+    elif mode == 10:
+        ceiling()
+    elif mode == 11:
+        power()
+    elif mode == 12:
+        log()
+    else:
+        print("Goodbye")
+        #exit()
+
+#countdown for main menu
 def countdown(seconds):
-    print("WELCOME TO THE CALCULATOR!!")
+    print("WELCOME TO THE CALCULATOR!!!!")
     print("BY LAMAR-SWE")
     while seconds:
-        time.sleep(1)
+        #Timer for menu appearance
+        time.sleep(3)
         seconds -= 1
-countdown(2)
-
-print("\nWe offer")
-print("1. Addition")
-print("2. Subtraction")
-print("3. Multiplication")
-print("4. Division")
-print("5. Square Root")
-print("6. Area of Triangle")
-print("7. Area of Square")
-print("8. Trigonometric Functions")
-print("9. Derivatives")
-print("10. Floor")
-print("11. Ceiling")
-print("12. Power")
-print("13. Logarithm")
-mode = int(input("Please select a mode: "))
-
-if mode == 1:
-    addition()
-elif mode == 2:
-    subtraction()
-elif mode == 3:
-    multiplication()
-elif mode == 4:
-    division()
-elif mode == 5:
-    squareroot()
-elif mode == 6:
-    aot_details()
-elif mode == 7:
-    square_details()
-elif mode == 8:
-    trig_mode()
-else:
-    print("Goodbye")
+        mainMenu()
+#number of loops        
+countdown(1)
